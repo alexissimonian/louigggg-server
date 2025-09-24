@@ -1,4 +1,5 @@
 <script>
+    import { goto } from '$app/navigation'
     let { data } = $props();
 </script>
 
@@ -6,5 +7,7 @@
 <p>here is a list of db items</p>
 
 {#each data.items as item}
-   <p>{item.test}</p>
+   <p>{item.name}</p>
 {/each}
+
+<button onclick={ () => goto('/create-item') }>Create</button>
